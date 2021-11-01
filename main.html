@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="main.css" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet">
     <title>Document</title>
     
 </head>
@@ -17,29 +17,39 @@
     </header>
 <section class="searchsystem">
         <div class="searchbar">
-            <input type="text" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette">
+            <input type="text" id="searchInput" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette" >
             <img class="searchbar_logo" aria-hidden="true" src="logos/Vector (1).png" >
 
         </div>
-        <button class="btn_ingredients">
+      <div class="dropdowns-container">
+          <div class="dropdown dropdown-ingredients">
+         <button class="btn_ingredients">
             Ingredients
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
             <i class="" aria-hidden="true"></i>
-            <i class="" aria-hidden="true"></i>
-        </button>
-        <button class="btn_appareil">
-            Appareil
-            <i class="" aria-hidden="true"></i>
-            <i class="" aria-hidden="true"></i>
-        </button>
-        <button class="btn_ustensile">
-            Ustensiles
-            <i class="" aria-hidden="true"></i>
-            <i class="" aria-hidden="true"></i>
-        </button>
-
+            
+          </button>
         </div>
+        <div class="dropdown dropdown-appareils">
+            <button class="btn_appareil">
+               Appareils
+               <i class="fas fa-chevron-down" aria-hidden="true"></i>
+               <i class="" aria-hidden="true"></i>
+               
+             </button>
+           </div>
+           <div class="dropdown dropdown-ustensiles">
+            <button class="btn_ustensile">
+               Ustensiles
+               <i class="fas fa-chevron-down" aria-hidden="true"></i>
+               <i class="" aria-hidden="true"></i>
+               
+             </button>
+           </div>
+         
+         </div>
 </section>
-<section class="recettes">
+<section id="results">
     <div class="card_recette">
         <div class="card_recette_photo"></div>
         <div class="card_recette_infos">
@@ -61,4 +71,6 @@
 
     
 </body>
+<script type="text/javascript" src="./app/search.js"></script>
+
 </html>

@@ -1,0 +1,98 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.logo_vector {
+  width: 3em;
+}
+
+.logo_content {
+  color: #D04F4F;
+  font-weight: 700;
+  margin: 0;
+}
+
+input {
+  width: 100%;
+  height: 2.5em;
+  border-radius: 5px;
+  background-color: #e7e7e7;
+}
+
+.searchbar {
+  position: relative;
+  margin: 20px;
+}
+
+.searchbar_logo {
+  position: absolute;
+  bottom: 2Px;
+  left: 98%;
+}
+
+.dropdowns-container {
+  display: flex;
+}
+
+.dropdown {
+  margin: 1em;
+}
+
+button {
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #E5E5E5;
+}
+
+.btn_ingredients {
+  background-color: #3282F7;
+}
+
+.btn_appareil {
+  background-color: #68D9A4;
+}
+
+.btn_ustensile {
+  background-color: #ED6454;
+}
+
+.card_recette {
+  width: 380px;
+  height: 364px;
+  border-radius: 5px;
+  background-color: #e7e7e7;
+}
+
+.card_recette_photo {
+  background-color: #C7BEBE;
+  width: 100%;
+  height: 50%;
+}
+
+.card_recette_infos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card_recette_infos_title {
+  width: 50%;
+}
+
+.card_recette_infos_time {
+  width: 50%;
+}
+
+.card_recette_infos_ingred {
+  width: 50%;
+}
+
+.card_recette_infos_instr {
+  width: 50%;
+}/*# sourceMappingURL=main.css.map */

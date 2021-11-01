@@ -1,0 +1,19 @@
+{
+  "name": "crascamillelouise_7_25_10_2021-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brunnodottir/CrasCamilleLouise_7_25_10_2021-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brunnodottir/CrasCamilleLouise_7_25_10_2021-/issues"
+  },
+  "homepage": "https://github.com/Brunnodottir/CrasCamilleLouise_7_25_10_2021-#readme"
+}
