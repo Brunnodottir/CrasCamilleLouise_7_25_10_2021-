@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="sass/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
     <title>Document</title>
     
 </head>
@@ -22,35 +24,63 @@
 
         </div>
       <div class="dropdowns-container">
-          <div class="dropdown dropdown-ingredients">
-         <button class="btn_ingredients">
-            Ingredients
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          <div class="dropdown dropingredients">
+             <button class="bloc-top dropingredients ">
+            <span>Ingredients</span>
+            <i class="fas fa-chevron-down" aria-hidden="false"></i>
             <i class="" aria-hidden="true"></i>
             
-          </button>
+             </button>
+          <div class ="bloc-links">
+              <ul>
+                  <li>Ail</li>
+                  <li>Chocolat</li>
+                  <li>Thym</li>
+                  <li>Coco</li>
+              </ul>
+          </div>
+          </div>
+
+            <div class="dropdown dropappareils">
+           <button class="bloc-top dropappareils">
+              <span>Appareils</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              <i class="" aria-hidden="true"></i>
+              
+            </button>
+            <div class ="bloc-links">
+                <ul>
+                    <li>Blender</li>
+                    <li>Four</li>
+                    <li>Wok</li>
+                    <li>Poele</li>
+                </ul>
+            </div>
+           </div>
+
+                <div class="dropdown dropustensiles">
+               <button class="bloc-top dropustensiles ">
+                  <span>Ustensiles</span>
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                  <i class="" aria-hidden="true"></i>
+                  
+                </button>
+                <div class ="bloc-links">
+                    <ul>
+                        <li>Cuillère</li>
+                        <li>Couteau</li>
+                        <li>Louche</li>
+                        <li>Saladier</li>
+                    </ul>
+                </div>
         </div>
-        <div class="dropdown dropdown-appareils">
-            <button class="btn_appareil">
-               Appareils
-               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-               <i class="" aria-hidden="true"></i>
-               
-             </button>
-           </div>
-           <div class="dropdown dropdown-ustensiles">
-            <button class="btn_ustensile">
-               Ustensiles
-               <i class="fas fa-chevron-down" aria-hidden="true"></i>
-               <i class="" aria-hidden="true"></i>
-               
-             </button>
-           </div>
-         
-         </div>
+
+
+
+       
 </section>
 <section id="results">
-    <div class="card_recette">
+    <!-- <div class="card_recette">
         <div class="card_recette_photo"></div>
         <div class="card_recette_infos">
             <span class="card_recette_infos_title">Limonade de Coco</span>
@@ -66,11 +96,13 @@
                 Sucre : 20g<br>
             </span>
             <span class="card_recette_infos_instr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae et hic ea eum ab laudantium earum! Ipsa fuga illo, dolor vitae suscipit eveniet ipsam quaerat accusantium voluptate maiores. Deleniti, odit?</span>
-        </div>
+        </div> -->
 </section>
 
     
 </body>
-<script type="text/javascript" src="./app/search.js"></script>
+<script type="module" src="./app/search.js"></script>
+<script type="module" src="./app/class/dropdown.js"></script>
+
 
 </html>

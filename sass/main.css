@@ -39,26 +39,44 @@ input {
 }
 
 .dropdown {
-  margin: 1em;
+  margin: 100px auto;
+  height: 63px;
+  max-width: 300px;
+  border-radius: 5px;
+  color: #E5E5E5;
+  transition: height 0.4s ease-in-out;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-button {
-  width: 170px;
-  height: 69px;
+.bloc-top {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
   border-radius: 5px;
-  margin-bottom: 20px;
   color: #E5E5E5;
 }
 
-.btn_ingredients {
+.bloc-links {
+  cursor: pointer;
+}
+
+.dropingredients {
   background-color: #3282F7;
 }
 
-.btn_appareil {
+.dropappareils {
   background-color: #68D9A4;
 }
 
-.btn_ustensile {
+.dropustensiles {
   background-color: #ED6454;
 }
 

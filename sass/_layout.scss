@@ -40,25 +40,44 @@ input {
 }
 
 .dropdown {
-    margin: 1em;
-}
-button {
-    width: 170px;
-    height: 69px;
+    margin: 100px auto;
+    height: 63px;
+    max-width: 300px;
     border-radius: 5px;
-    margin-bottom: 20px;
     color: $primary;
-
+    transition: height 0.4s ease-in-out;
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
 }
- .btn_ingredients {
-     background-color:  $blue;
- }
 
- .btn_appareil {
+.bloc-top {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: $primary;
+}
+
+.bloc-links {
+    cursor: pointer;
+}
+
+.dropingredients {
+    background-color: $blue;
+}
+
+
+ .dropappareils {
      background-color:  $green;
  }
 
- .btn_ustensile {
+ .dropustensiles {
      background-color:  $orange;
 
  }
