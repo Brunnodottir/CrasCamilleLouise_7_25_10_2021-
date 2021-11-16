@@ -16,7 +16,7 @@ render(){
     document.querySelector("#results").append(container);
 
     const photo = document.createElement("div");
-    container.className="card_recette_photo";
+    photo.className="card_recette_photo";
 
     const info = document.createElement("div");
     info.className="card_recette_infos";

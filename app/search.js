@@ -1,6 +1,7 @@
 import {recipes} from "./data/recipes.js"
 import {Card} from "./class/card.js"
-// import {Dropdown} from "./class/dropdown.js"
+import {Dropdown} from "./class/dropdown.js"
+
 const main = document.querySelector(".card_recette");
 
 
@@ -23,12 +24,7 @@ let resultSearch = recipes;
 
 
 
-
-
-
-/////
-
-
+// rechercher un element //
 searchInput.addEventListener('input', (e) => {
     searchTerm = e.target.value;
     if (searchTerm.length > 2){
@@ -50,7 +46,8 @@ searchInput.addEventListener('input', (e) => {
         console.log("Aucune recette ne correspond")
     }
     //genere list sur la valeur donnée : ici ResultSearch défini plus haut
-    console.log("appliance list ", generateApplianceList(resultSearch))
+    console.log("appliance list ", generateApplianceList(resultSearch));
+    console.log ("ustensils list ", generateUstensilsList(resultSearch));
     
 
     
@@ -85,13 +82,39 @@ function generateApplianceList(recipesList) {
     let allAppliance = [];
     for ( let i = 0; i < recipesList.length ; i++) {
         allAppliance.push(recipesList[i].appliance)
+
     }
 
-    // filtrer les doublon
+    // filtrer les doublons
     return allAppliance;
+
+    /// ajouter allAppliance au Dom ///
+
+  
+
 }
 
-const result = searchRecipes(recipes, "tarte");
+
+
+function generateUstensilsList(recipesList) {
+    let allUstensils = [];
+    for (let i = 0; i< recipesList.length ; i++) {
+        allUstensils.push(recipesList[i].ustensils) //tableau
+    }
+
+    return allUstensils;
+    
+}
+
+
+
+
+
+
+
+
+
+// const result = searchRecipes(recipes, "tarte");
 // const result2 = filterByIngredient(result, "ail");
 
 // console.log(result2)
@@ -100,11 +123,10 @@ const result = searchRecipes(recipes, "tarte");
 //searchby aplliance
 //searchbyustensils
 
-//generate list ingredients
-// generate list ustensils
-//generate list appliance
-
 // render recipe, ingredit
+
+
+
 
 
 // search by tags
@@ -124,7 +146,7 @@ const result = searchRecipes(recipes, "tarte");
 //         }
        
 //     })
-// }
+
 
 // getAllIngredients(){
 //     const AllIngredients = "";
@@ -135,5 +157,9 @@ const result = searchRecipes(recipes, "tarte");
     
 // }
 
-const myCard = new Card("Nom recette",[{ingredient: "coco"},{ingredient: "ail"}], "teteetter", "fdffsfds");
-myCard.render();
+
+
+// *** test de rendu card ***//
+// const myCard = new Card("Nom recette",[{ingredient: "coco"},{ingredient: "ail"}], "teteetter", "fdffsfds");
+// myCard.render();
+

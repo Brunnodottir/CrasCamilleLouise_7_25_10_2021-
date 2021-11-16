@@ -82,6 +82,13 @@ input {
 
  }
 
+ #results {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+
  .card_recette {
      width: 380px;
      height: 364px;
@@ -113,5 +120,7 @@ input {
 }
 .card_recette_infos_instr {
     width: 50%;
+    font-size: smaller;
+    overflow: hidden;
 }
 

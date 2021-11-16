@@ -1,19 +1,32 @@
-// export class Dropdown {
-//     constructor (dropList, type) {
-//         this.dropList = dropList;
-//         this.type = type;
-//     }
 
-//     render(){
-//         const container = document.createElement("div");
-//         container.className="dropdown dropdown-ingredients";
 
-//         const button = document.createElement("button");
-//         button.classList="btn"+this.type;
-//         button.innerHTML = this.type;
-    
-//     }
-// }
+export class Dropdown {
+    constructor (name) {
+        this.name = name;
+    }
+    render(){
+        const container = document.createElement("div");
+        container.className = "bloc-links";
+
+        document.querySelectorAll(".bloc-top").append(container);
+      
+
+
+        const ul = document.createElement("ul");
+        ul.className= "drop-flag";
+     
+        const item = document.createElement("li");
+       item.className ="drop_item";
+
+       container.append(ul);
+       ul.append(item);
+       
+    }
+}
+
+const myDrop= new Dropdown("Nom", [{item1}, {item2}]);
+myDrop.render();
+
 
 const dropdown = document.querySelectorAll(".dropdown");
 const btnDrop = document.querySelectorAll(".bloc-top");
@@ -37,3 +50,4 @@ for (let i = 0 ; i<dropdown.length; i++){
     
     })
 }
+
