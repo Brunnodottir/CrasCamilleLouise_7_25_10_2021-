@@ -122,4 +122,25 @@ input {
   width: 50%;
   font-size: smaller;
   overflow: hidden;
+}
+
+ul {
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 200px;
+}
+
+li {
+  width: 30%;
+  list-style-type: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 2rem;
+  text-align: start;
+  line-height: 2rem;
 }/*# sourceMappingURL=main.css.map */
