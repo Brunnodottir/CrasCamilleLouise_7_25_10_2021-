@@ -22,7 +22,13 @@ let searchTerm ="";
 let resultSearch = recipes;
 
 
-
+function displayRecipes(recipesList) { 
+    document.getElementById("results").innerHTML="";
+    for (let i = 0; i<recipesList.length; i++) {
+        const filteredRecipe = new Card(recipesList[i].name,recipesList[i].ingredients,recipesList[i].time, recipesList[i].description )
+      filteredRecipe.render();
+    }
+}
 
 // rechercher un element //
 searchInput.addEventListener('input', (e) => {
@@ -31,15 +37,8 @@ searchInput.addEventListener('input', (e) => {
         // const filteredCard = searchRecipes(recipesList,value)
     }
     resultSearch = searchRecipes(recipes, searchTerm);
-    console.log(resultSearch)
-
-    //shoot previous data
-    document.getElementById("results").innerHTML="";
-    
-    for (let i = 0; i<resultSearch.length; i++) {
-        const filteredRecipe = new Card(resultSearch[i].name,resultSearch[i].ingredients,resultSearch[i].time, resultSearch[i].description )
-      filteredRecipe.render();
-    }
+    // const filteredResult = applyFilter(resultSearch)
+    displayRecipes(resultSearch);
 
 
     if (resultSearch.length === 0){
@@ -114,18 +113,81 @@ function displayIngredientList(ingredientsList) {
            filterElem.setAttribute("data-value", ingredientsList[i]);
            filterElem.setAttribute("data-type", "ingredient");
            filterElem.classList.add("tag");
-           const container = document.getElementsByClassName("dropdowns-container")[0];
+           const container = document.getElementsByClassName("tags-container")[0];
            container.append(filterElem);
+
+           ////////////////////////////////
+
+           applyFilter();
+       
+
+            //////////////////
        })
        li.textContent = ingredientsList[i];
 
        ul.append(li);
 
    }
+   // reclick
+// function closeTag
+
+
+
+
 
 
 
 }
+function applyFilter(recipesList) {
+    let filteredRecipe = [...recipesList];
+    const tag = document.getElementsByClassName("tag");
+    const tagArray = [...tag];
+
+    for (let i=0; i<tagArray.length; i++){
+       const filterVal =  tagArray[i].getAttribute("data-value");
+       const filterType =  tagArray[i].getAttribute("data-type");
+       
+    if (filterType === "ingredients") {
+        //filterbyIngredients(); //regarder switchcase
+        filteredRecipe = filterbyIngredients(filteredRecipe, filterVal)
+        
+
+    }
+    if (filterType === "appliance") {
+        //filterbyAppliance();
+    }
+    if (filterType === "ustensil") {
+        //filterbyUstensil();
+
+    }
+}
+    return filteredRecipe;
+}
+
+function filterbyIngredients(recipesList, value){
+
+    return recipesList.filter(recipe => recipe.ingredients.some((ingredientObj) => ingredientObj.ingredient.toLowerCase().includes(value.toLowerCase())))
+
+}
+
+const result25 = filterbyIngredients(recipes, "Jus de citron");
+console.log(result25) 
+
+
+function filterbyAppliance(recipesList, value){
+    return recipesList.filter(recipe =>recipe.appliance === value)
+}
+
+function filterbyUstensil(recipesList,value){
+    return recipesList.filter(recipe => recipe.ustensils.includes(value))
+}
+
+
+
+
+
+
+
 
 function generateApplianceList(recipesList) {
     let allAppliance = [];
@@ -160,9 +222,10 @@ function displayApplianceList(applianceList) {
            filterElem.setAttribute("data-value",applianceList[i] );
            filterElem.setAttribute("data-type", "appliance");
            filterElem.classList.add("tag");
-           const container = document.getElementsByClassName("dropdowns-container")[0]; //ajouter dans un div dédié
+           const container = document.getElementsByClassName("tags-container")[0]; //ajouter dans un div dédié
            container.append(filterElem);
            //applianceFilter();
+           applyFilter(resultSearch);//ajouter 
        })
        li.textContent = applianceList[i];
 
@@ -172,9 +235,29 @@ function displayApplianceList(applianceList) {
 
 }
 //1.recup elements du dom avec class tag
+
+ 
+
+
+
+
 //2. faire un tableau et parcourir
 
+
 //3. recup leur valeur et type
+
+// function searchByTags(valeur) {
+//     let filteredRecipes = [];
+
+//     for (let i = 0; i< this.filteredRecipes.length; i++){
+//         if (this.filteredRecipes[i].stringifyRecipes.includes(valeur.tags)) {
+//             filteredRecipes.push(filteredRecipes[i]);
+//         }
+//         //return ??//
+//     }
+
+
+// }
 // function searchBy // ajouter parametres de recherche
 //4. => prendre la liste des recettes actives (resultSearch) et la filtrer avec (valeur,type)
 // return tableau de recettes filtrées
@@ -224,8 +307,9 @@ function displayUstensilList(ustensilsList) {
            filterElem.setAttribute("data-value", ustensilsList[i]);
            filterElem.setAttribute("data-type", "ustensil");
            filterElem.classList.add("tag");
-           const container = document.getElementsByClassName("dropdowns-container")[0];
+           const container = document.getElementsByClassName("tags-container")[0];
            container.append(filterElem);
+           applyFilter();
        })
        li.textContent = ustensilsList[i];
 

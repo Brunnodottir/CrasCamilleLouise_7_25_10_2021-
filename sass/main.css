@@ -143,4 +143,20 @@ li {
   margin-left: 2rem;
   text-align: start;
   line-height: 2rem;
+}
+
+.tag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  color: #E5E5E5;
+  height: 35px;
+  border-radius: 1rem;
+  margin: 0 1rem 0 0;
+  padding: 0.5rem;
+}
+
+[data-ingredient] {
+  background-color: #3282F7;
 }/*# sourceMappingURL=main.css.map */
