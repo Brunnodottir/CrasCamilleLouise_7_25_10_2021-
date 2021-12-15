@@ -20,6 +20,17 @@ let search ="";
 let searchTerm ="";
 
 let resultSearch = recipes;
+let resultFilter = [];
+
+// generer les listes au chargement de la page
+let ingredientList = generateIngredientList(recipes);
+displayIngredientList(ingredientList);
+
+let applianceList = generateApplianceList(recipes);
+displayApplianceList(applianceList);
+
+let ustensilList = generateUstensilList(recipes);
+displayUstensilList(ustensilList);
 
 
 function displayRecipes(recipesList) { 
@@ -49,27 +60,17 @@ searchInput.addEventListener('input', (e) => {
     console.log ("ustensils list ", generateUstensilList(resultSearch));
     console.log("ingredients list", generateIngredientList(resultSearch));
 
-    const ingredientList = generateIngredientList(resultSearch);
+    ingredientList = generateIngredientList(resultSearch);
     displayIngredientList(ingredientList);
 
-    const applianceList = generateApplianceList(resultSearch);
+     applianceList = generateApplianceList(resultSearch);
     displayApplianceList(applianceList);
 
-    const ustensilList = generateUstensilList(resultSearch);
+    ustensilList = generateUstensilList(resultSearch);
     displayUstensilList(ustensilList);
  
     
 })
-
-// generer les listes au chargement de la page
-const ingredientList = generateIngredientList(recipes);
-displayIngredientList(ingredientList);
-
-const applianceList = generateApplianceList(recipes);
-displayApplianceList(applianceList);
-
-const ustensilList = generateUstensilList(recipes);
-displayUstensilList(ustensilList);
 
 
 
@@ -116,10 +117,27 @@ function displayIngredientList(ingredientsList) {
            const container = document.getElementsByClassName("tags-container")[0];
            container.append(filterElem);
 
+           filterElem.addEventListener("click", () => {
+               filterElem.remove();
+               resultFilter = applyFilter(resultSearch);
+               displayRecipes(resultFilter);
+           })
+
            ////////////////////////////////
 
-           applyFilter();
+           resultFilter = applyFilter(resultSearch);
+           displayRecipes(resultFilter);
+
+           ingredientList = generateIngredientList(resultFilter);
+            displayIngredientList(ingredientList);
+
+         applianceList = generateApplianceList(resultFilter);
+        displayApplianceList(applianceList);
+
+         ustensilList = generateUstensilList(resultFilter);
+         displayUstensilList(ustensilList);
        
+           
 
             //////////////////
        })
@@ -147,16 +165,18 @@ function applyFilter(recipesList) {
        const filterVal =  tagArray[i].getAttribute("data-value");
        const filterType =  tagArray[i].getAttribute("data-type");
        
-    if (filterType === "ingredients") {
+    if (filterType === "ingredient") {
         //filterbyIngredients(); //regarder switchcase
         filteredRecipe = filterbyIngredients(filteredRecipe, filterVal)
         
 
     }
     if (filterType === "appliance") {
+        filteredRecipe = filterbyAppliance(filteredRecipe, filterVal)
         //filterbyAppliance();
     }
     if (filterType === "ustensil") {
+        filteredRecipe = filterbyUstensil(filteredRecipe, filterVal)
         //filterbyUstensil();
 
     }
@@ -166,12 +186,12 @@ function applyFilter(recipesList) {
 
 function filterbyIngredients(recipesList, value){
 
-    return recipesList.filter(recipe => recipe.ingredients.some((ingredientObj) => ingredientObj.ingredient.toLowerCase().includes(value.toLowerCase())))
+    return recipesList.filter(recipe => recipe.ingredients.some((ingredientObj) => ingredientObj.ingredient.toLowerCase() === value.toLowerCase()))
 
 }
 
-const result25 = filterbyIngredients(recipes, "Jus de citron");
-console.log(result25) 
+// const result25 = filterbyIngredients(recipes, "Jus de citron");
+// console.log(result25) 
 
 
 function filterbyAppliance(recipesList, value){
@@ -234,48 +254,7 @@ function displayApplianceList(applianceList) {
    }
 
 }
-//1.recup elements du dom avec class tag
 
- 
-
-
-
-
-//2. faire un tableau et parcourir
-
-
-//3. recup leur valeur et type
-
-// function searchByTags(valeur) {
-//     let filteredRecipes = [];
-
-//     for (let i = 0; i< this.filteredRecipes.length; i++){
-//         if (this.filteredRecipes[i].stringifyRecipes.includes(valeur.tags)) {
-//             filteredRecipes.push(filteredRecipes[i]);
-//         }
-//         //return ??//
-//     }
-
-
-// }
-// function searchBy // ajouter parametres de recherche
-//4. => prendre la liste des recettes actives (resultSearch) et la filtrer avec (valeur,type)
-// return tableau de recettes filtrées
-// fonction d'affichage des recettes
-
-
-
-
-
-// function generateUstensilsList(recipesList) {
-//     let allUstensils = [];
-//     for (let i = 0; i< recipesList.length ; i++) {
-//         allUstensils.push(recipesList[i].ustensils) //tableau
-//     }
-
-//     return allUstensils;
-    
-// }
 
 function generateUstensilList(recipesList) {
     let allUstensils = [];
@@ -309,7 +288,7 @@ function displayUstensilList(ustensilsList) {
            filterElem.classList.add("tag");
            const container = document.getElementsByClassName("tags-container")[0];
            container.append(filterElem);
-           applyFilter();
+           applyFilter(resultSearch);
        })
        li.textContent = ustensilsList[i];
 
@@ -319,42 +298,3 @@ function displayUstensilList(ustensilsList) {
 }
 
 
-
-// Ajouter les "li" au DOM
-
-//1. ajouter un attribut "data-value ail" +"data-type ingredient"
-
-
-
-
-
-// const result = searchRecipes(recipes, "tarte");
-// const result2 = filterByIngredient(result, "ail");
-
-// console.log(result2)
-
-//function searchbyingredient
-//
-//function searchby aplliance
-//function searchbyustensils
-
-// render recipe, ingredit
-
-
-
-// tags.forEach(tag => {
-    // tag.addEventListener("click", e => {
-    //     const newTag = e.target.getAttribute("new-value");
-    //     const filteredRecipes = recipesList.filter((recipes) => {
-    //         return recipes.tags.includes(newTag);
-    //     }
-    // })
-// })
-
-// shootprevious data ? 
-//
-
-
-// *** test de rendu card ***//
-// const myCard = new Card("Nom recette",[{ingredient: "coco"},{ingredient: "ail"}], "teteetter", "fdffsfds");
-// myCard.render();

@@ -19,23 +19,30 @@ render(){
     photo.className="card_recette_photo";
 
     const info = document.createElement("div");
-    info.className="card_recette_infos";
+    info.className="card_recette_content";
+
+    const top = document.createElement("div");
+    top.className="card_recette_content_top"
 
     const cardName = document.createElement("span");
-    cardName.className ="card_recette_infos_title";
+    cardName.className ="card_recette_title";
     cardName.textContent =this.name;
 
     const cardTime = document.createElement("div");
-    cardTime.className ="card_recette_infos_time";
+    cardTime.className ="card_recette_time";
     cardTime.textContent = this.time;
 
-    
+    const bottom = document.createElement("div");
+    bottom.className="card_recette_content_bottom";
+
+    const ingrList = document.createElement("div");
+    ingrList.className="ingredient_list";
 
     for (let i =0; i<this.ingredients.length; i++) {
         const cardIngr = document.createElement("span");
     cardIngr.className ="card_recette_infos_ingred";
     cardIngr.textContent=this.ingredients[i].ingredient;
-    info.append(cardIngr)
+   ingrList.append(cardIngr)
        
 
     } 
@@ -49,7 +56,9 @@ render(){
 
 
     container.append(photo, info);
-    info.append(cardName, cardTime, cardInst)
+    info.append(top, bottom)
+    top.append(cardName,cardTime)
+    bottom.append( ingrList,cardInst)
 }
 
 
