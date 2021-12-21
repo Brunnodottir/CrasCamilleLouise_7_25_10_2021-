@@ -93,13 +93,24 @@ searchInput.addEventListener('input', (e) => {
 
 
 //ajouter les paramètres de recherche
-function searchRecipes(recipesList, value) {
-    return recipesList.filter(recipe => recipe.name.toLowerCase().includes(value.toLowerCase()) ||
-    // recipe.appliance.toString().toLowerCase().includes(value)||
-    recipe.description.includes(value) 
-    || recipe.ingredients.some((ingredientObj) => ingredientObj.ingredient.toLowerCase().includes(value.toLowerCase()))  );
-}
 
+// function searchRecipes(recipesList, value) {
+//     return recipesList.filter(recipe => recipe.name.toLowerCase().includes(value.toLowerCase()) ||
+//     // recipe.appliance.toString().toLowerCase().includes(value)||
+//     recipe.description.includes(value) 
+//     || recipe.ingredients.some((ingredientObj) => ingredientObj.ingredient.toLowerCase().includes(value.toLowerCase()))  );
+// }
+
+
+function searchRecipes(recipesList) {
+    const cardsContainer = document.querySelector("#results");
+    let htmlContent ="";
+    for (let i =0; i< recipesList.length; i++) {
+        console.log("test")
+
+    }
+   
+}
 
 
 function generateIngredientList(recipesList) {
