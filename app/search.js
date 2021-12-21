@@ -32,6 +32,24 @@ displayApplianceList(applianceList);
 let ustensilList = generateUstensilList(recipes);
 displayUstensilList(ustensilList);
 
+function updateListsRender() {
+    
+
+    resultFilter = applyFilter(resultSearch);
+    displayRecipes(resultFilter);
+
+    ingredientList = generateIngredientList(resultFilter);
+     displayIngredientList(ingredientList);
+
+      applianceList = generateApplianceList(resultFilter);
+     displayApplianceList(applianceList);
+
+     ustensilList = generateUstensilList(resultFilter);
+     displayUstensilList(ustensilList);
+
+    
+}
+
 
 function displayRecipes(recipesList) { 
     document.getElementById("results").innerHTML="";
@@ -119,23 +137,27 @@ function displayIngredientList(ingredientsList) {
 
            filterElem.addEventListener("click", () => {
                filterElem.remove();
-               resultFilter = applyFilter(resultSearch);
-               displayRecipes(resultFilter);
+           
+            updateListsRender();
            })
+
+           updateListsRender();
 
            ////////////////////////////////
 
-           resultFilter = applyFilter(resultSearch);
-           displayRecipes(resultFilter);
+           
 
-           ingredientList = generateIngredientList(resultFilter);
-            displayIngredientList(ingredientList);
+        //    resultFilter = applyFilter(resultSearch);
+        //    displayRecipes(resultFilter);
 
-         applianceList = generateApplianceList(resultFilter);
-        displayApplianceList(applianceList);
+        //    ingredientList = generateIngredientList(resultFilter);
+        //     displayIngredientList(ingredientList);
 
-         ustensilList = generateUstensilList(resultFilter);
-         displayUstensilList(ustensilList);
+        //      applianceList = generateApplianceList(resultFilter);
+        //     displayApplianceList(applianceList);
+
+        //     ustensilList = generateUstensilList(resultFilter);
+        //     displayUstensilList(ustensilList);
        
            
 
@@ -156,6 +178,17 @@ function displayIngredientList(ingredientsList) {
 
 
 }
+
+const inputIngr = document.getElementById("searchInputIngr");
+inputIngr.addEventListener('input', e => {
+    // console.log('test input')
+    const newIngList = ingredientList.filter(ingredient => ingredient.toLowerCase().startsWith(e.target.value.toLowerCase()));
+    displayIngredientList(newIngList);
+})
+
+
+
+
 function applyFilter(recipesList) {
     let filteredRecipe = [...recipesList];
     const tag = document.getElementsByClassName("tag");
@@ -244,8 +277,16 @@ function displayApplianceList(applianceList) {
            filterElem.classList.add("tag");
            const container = document.getElementsByClassName("tags-container")[0]; //ajouter dans un div dédié
            container.append(filterElem);
-           //applianceFilter();
-           applyFilter(resultSearch);//ajouter 
+
+           filterElem.addEventListener("click", () => {
+            filterElem.remove();
+            updateListsRender();
+
+        })
+        updateListsRender();
+
+
+
        })
        li.textContent = applianceList[i];
 
@@ -288,7 +329,14 @@ function displayUstensilList(ustensilsList) {
            filterElem.classList.add("tag");
            const container = document.getElementsByClassName("tags-container")[0];
            container.append(filterElem);
-           applyFilter(resultSearch);
+           filterElem.addEventListener("click", () => {
+            filterElem.remove();
+        
+         updateListsRender();
+        })
+
+        updateListsRender();
+
        })
        li.textContent = ustensilsList[i];
 

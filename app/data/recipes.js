@@ -59,7 +59,7 @@ export const recipes = [
                 "quantity" : 5
             },
             {
-                "ingredient" : "Lait de Coco",
+                "ingredient" : "Lait de coco",
                 "quantity" : 100,
                 "unit" : "ml"
             }
@@ -192,7 +192,7 @@ export const recipes = [
                 "quantity": 1
             },
             {
-                "ingredient": "Pomme",
+                "ingredient": "Pommes",
                 "quantity": 3
             },
             {
@@ -278,7 +278,7 @@ export const recipes = [
                 "quantity": 2
            },
            {
-               "ingredient": "Sucre en Poudre",
+               "ingredient": "Sucre en poudre",
                "quantity": "110",
                "unit": "grammes"
            },
@@ -534,7 +534,7 @@ export const recipes = [
                 "unit": "grammes"
             },
             {
-                "ingredient": "Banane",
+                "ingredient": "Bananes",
                 "quantity": 4
             }
         ],
@@ -642,7 +642,7 @@ export const recipes = [
         "servings": 4,
         "ingredients": [
             {
-                "ingredient": "Kiwi",
+                "ingredient": "Kiwis",
                 "quantity": 4
             },
             {
@@ -660,7 +660,7 @@ export const recipes = [
                 "unit":"grammes"
             },
             {
-                "ingredient": "Banane",
+                "ingredient": "Bananes",
                 "quantity": 1
             }
         ],
@@ -805,7 +805,7 @@ export const recipes = [
                 "quantity": 3
             },
             {
-                "ingredient": "Crème fraîche",
+                "ingredient": "Crème fraiche",
                 "quantity": 20,
                 "unit": "cl"
             },
@@ -939,7 +939,7 @@ export const recipes = [
                 "quantity": 1
             },
             {
-                "ingredient": "Crème fraîche",
+                "ingredient": "Crème fraiche",
                 "quantity": 4,
                 "unit": "cuillère à soupe"
             },
@@ -984,7 +984,7 @@ export const recipes = [
                 "unit":"grammes"
             },
             {
-                "ingredient": "Crême fraîche",
+                "ingredient": "Crème fraiche",
                 "quantity": 10,
                 "unit": "cl"
             }
@@ -996,7 +996,7 @@ export const recipes = [
     },
     {
         "id": 29,
-        "name": "Houmous Express",
+        "name": "Hoummous Express",
         "servings": 2,
         "ingredients": [
             {
@@ -1290,7 +1290,7 @@ export const recipes = [
                 "quantity": 1
             },
             {
-                "ingredient": "Coulis de tomates",
+                "ingredient": "Coulis de tomate",
                 "quantity": 20,
                 "unit": "cl"
             },
@@ -1703,7 +1703,7 @@ export const recipes = [
                 "quantity": 6
             },
             {
-                "ingredient": "Poudre d'amendes",
+                "ingredient": "Poudre d'amandes",
                 "quantity": 500,
                 "unit": "grammes"
             },
@@ -1719,7 +1719,7 @@ export const recipes = [
             }
         ],
         "time": 60,
-        "description":"Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
+        "description":"Préparer la frangipane : Mélanger le sucre la poudre d'amandes, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
         "appliance": "Four",
         "ustensils":["rouleau à patisserie","fouet"]
     }

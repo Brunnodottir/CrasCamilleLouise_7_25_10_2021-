@@ -39,7 +39,7 @@ input {
 }
 
 .dropdown {
-  margin: 100px auto;
+  margin: auto;
   height: 63px;
   width: 30%;
   border-radius: 5px;
@@ -47,6 +47,10 @@ input {
   transition: height 0.4s ease-in-out;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.fa-chevron-up {
+  display: none;
 }
 
 .bloc-top {
@@ -192,11 +196,39 @@ li {
   padding: 0.5rem;
 }
 
-[data-ingredients] {
+.tag[data-type=ingredient] {
   background-color: #3282F7;
 }
 
+.tag[data-type=appliance] {
+  background-color: #68D9A4;
+}
+
+.tag[data-type=ustensil] {
+  background-color: #ED6454;
+}
+
 #searchInputIngr {
+  background-color: transparent;
+  width: 100%;
+  color: white;
+  padding: 5px;
+  outline: none;
+  border: none;
+  display: none;
+}
+
+#searchInputUst {
+  background-color: transparent;
+  width: 100%;
+  color: white;
+  padding: 5px;
+  outline: none;
+  border: none;
+  display: none;
+}
+
+#searchInputApp {
   background-color: transparent;
   width: 100%;
   color: white;
